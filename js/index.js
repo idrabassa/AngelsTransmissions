@@ -1,33 +1,33 @@
-let slideIndex = 1
-showSlides(slideIndex)
+// let slideIndex = 1
+// showSlides(slideIndex)
 
-function plusSlides(n) {
-  showSlides((slideIndex += n))
-}
+// function plusSlides(n) {
+//   showSlides((slideIndex += n))
+// }
 
-function currentSlide(n) {
-  showSlides((slideIndex = n))
-}
+// function currentSlide(n) {
+//   showSlides((slideIndex = n))
+// }
 
-function showSlides(n) {
-  let i
-  let slides = document.getElementsByClassName('mySlides')
-  let dots = document.getElementsByClassName('dot')
-  if (n > slides.length) {
-    slideIndex = 1
-  }
-  if (n < 1) {
-    slideIndex = slides.length
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none'
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(' active', '')
-  }
-  slides[slideIndex - 1].style.display = 'block'
-  dots[slideIndex - 1].className += ' active'
-}
+// function showSlides(n) {
+//   let i
+//   let slides = document.getElementsByClassName('mySlides')
+//   let dots = document.getElementsByClassName('dot')
+//   if (n > slides.length) {
+//     slideIndex = 1
+//   }
+//   if (n < 1) {
+//     slideIndex = slides.length
+//   }
+//   for (i = 0; i < slides.length; i++) {
+//     slides[i].style.display = 'none'
+//   }
+//   for (i = 0; i < dots.length; i++) {
+//     dots[i].className = dots[i].className.replace(' active', '')
+//   }
+//   slides[slideIndex - 1].style.display = 'block'
+//   dots[slideIndex - 1].className += ' active'
+// }
 
 const qnum1 = document.getElementsByClassName('qnum1')
 const anum1 = document.getElementsByClassName('card-body1')
@@ -97,3 +97,50 @@ $('#navbar a').on('click', function (event) {
     )
   }
 })
+
+// effectButton.for((button) => {
+//   console.log(button.classList)
+//   button.classList.remove('view')
+//   setTimeout(() => animatedNext.current.classList.add('view'), 100)
+// })
+
+const buttons = document.querySelectorAll('.primary-button')
+
+buttons.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    let x = e.clientX - e.target.offsetLeft
+    let y = e.clientY - e.target.offsetTop
+
+    let ripples = document.createElement('span')
+    ripples.style.left = x + 'px'
+    ripples.style.top = y + 'px'
+    btn.appendChild(ripples)
+    setTimeout(() => {
+      ripples.remove()
+    }, 1000)
+  })
+})
+
+// const buttonAllservices = document.getElementById('allservices')
+// buttonAllservices.addEventListener('click', openModal())
+
+function openModal() {
+  const modal = document.getElementById('modal')
+  console.log(modal)
+  modal.classList.add('show-modal')
+}
+function closeModal() {
+  const modal = document.getElementById('modal')
+  modal.classList.remove('show-modal')
+}
+
+// var swiper = new Swiper('.mySwiper', {
+//   pagination: {
+//     el: '.swiper-pagination',
+//     type: 'progressbar',
+//   },
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+// })

@@ -25,15 +25,16 @@
   /* shawdow */
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --very-dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.281);
 }
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 body {
   font-size: 15px;
   font-family: var(--font-josefin);
@@ -74,11 +75,24 @@ p {
   padding: 9px;
   text-align: center;
   width: 160px;
-  /* height: 100%; */
+  height: 50px;
   font-size: 13px;
   letter-spacing: 3px;
   background: var(--color-primary);
   transition: all ease-in-out 0.3s;
+
+  /* position: relative;
+  display: inline-block;
+  padding: 12px 36px;
+  margin: 10px 0;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #0162c8, #55e7fc);
+  overflow: hidden; */
 }
 .primary-button:hover {
   color: var(--color-black);
@@ -345,7 +359,7 @@ li:hover:before {
 /* Banner-Key-Schedule */
 
 .banner-key-schedule {
-  height: 180px;
+  height: 190px;
 }
 
 .container-banner-key-schedule {
@@ -552,6 +566,7 @@ li:hover:before {
 }
 .our-services-slider {
   width: 50%;
+  position: relative;
 }
 
 /* 
@@ -1074,7 +1089,11 @@ h3 {
   font-size: 11px;
 }
 
-/* Footer */
+/* 
+======
+Footer
+======
+*/
 .footer {
   height: 400px;
 }
@@ -1093,6 +1112,8 @@ h3 {
   /* padding: 20px; */
 }
 .footer .container .footer-left .logo {
+  display: flex;
+  justify-content: flex-start;
   width: 280px;
   height: 50px;
 }
@@ -1152,4 +1173,144 @@ h3 {
 }
 .map {
   height: 100%;
+}
+
+/* 
+=============
+    Modal
+=============
+*/
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  z-index: -1;
+  transition: var(--transition);
+}
+
+/*
+=============== 
+Modal Rules
+===============
+*/
+.show-modal {
+  opacity: 1;
+  z-index: 10;
+}
+
+.modal-container {
+  background: var(--clr-grey-10);
+  border-radius: var(--radius);
+  width: 50vw;
+  max-width: var(--fixed-width);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  position: relative;
+}
+
+.modal-container h1 {
+  color: var(--clr-dark-text);
+}
+
+.modal-container div {
+  width: 100%;
+  padding: 20px;
+}
+
+.header-modal-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-modal-container img {
+  width: 70%;
+  height: 70%;
+}
+
+.close-modal-btn {
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: hsl(210, 1%, 64%);
+  cursor: pointer;
+}
+
+/* 
+=================
+Effect of buttons
+=================
+*/
+
+/* .primary-button span {
+  position: absolute;
+  background: black;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: riple 1s linear infinite;
+}
+
+@keyframes riple {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 0.5;
+  }
+  100% {
+    height: 500px;
+    width: 500px;
+    opacity: 0;
+  }
+} */
+
+/* 
+=============
+ Swiper CSS
+=============
+*/
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

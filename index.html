@@ -14,7 +14,8 @@
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -97,8 +98,7 @@
                     </p>
                 </div>
                 <div class="banner-key-schedule-button">
-
-                    <button class="primary-button">SCHEDULE APPOINTMENT</button>
+                    <button id="allservices" class="primary-button" onclick="openModal()">SCHEDULE APPOINTMENT</button>
                 </div>
 
             </div>
@@ -215,11 +215,11 @@
                     </div>
                 </div>
                 <div class="container-button-services">
-                    <button class="primary-button"> SEE ALL SERVICES</button>
+                    <button id='allservices' class="primary-button" onclick=""> SEE ALL SERVICES</button>
                 </div>
             </div>
             <div class="our-services-slider">
-                <div class="slideshow-container">
+                <!-- <div class="slideshow-container">
                     <div class="mySlides fade">
                         <div class="numbertext">1 / 9</div>
                         <img class="slider-img-drag" src="./img/transmission-cutaway-_11_2048x2048.jpeg"
@@ -240,7 +240,7 @@
                     </div>
                     <div class="mySlides fade">
                         <div class="numbertext">4/ 9</div>
-                        <img class="slider-img-drag" src="/.img/transmission-cutaway-_14_2048x2048.jpeg"
+                        <img class="slider-img-drag" src="./img/transmission-cutaway-_14_2048x2048.jpeg"
                             style="width:100%">
                         <div class="text">Caption Four</div>
                     </div>
@@ -288,6 +288,42 @@
                     <span class="dot" onclick="currentSlide(7)"></span>
                     <span class="dot" onclick="currentSlide(8)"></span>
                     <span class="dot" onclick="currentSlide(9)"></span>
+                </div> -->
+                <!-- Slider main container -->
+                <div class="swiper-container mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img class="slider-img-drag" src="./img/transmission-cutaway-_11_2048x2048.jpeg"
+                                style="width:100%">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="slider-img-drag" src="./img/transmission-cutaway-_12_2048x2048.jpeg"
+                                style="width:100%">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="slider-img-drag" src="./img/transmission-cutaway-_13_2048x2048.jpeg"
+                                style="width:100%">
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="slider-img-drag" src="./img/transmission-cutaway-_14_2048x2048.jpeg"
+                                style="width:100%">
+                        </div>
+                        <div class="swiper-slide"><img class="slider-img-drag"
+                                src="./img/transmission-cutaway-_15_2048x2048.jpeg" style="width:100%"></div>
+                        <div class="swiper-slide">
+                            <img class="slider-img-drag" src="./img/transmission-cutaway-_16_2048x2048.jpeg"
+                                style="width:100%">
+                        </div>
+                        <div class="swiper-slide"><img class="slider-img-drag"
+                                src="./img/transmission-cutaway-_17_2048x2048.jpeg" style="width:100%"></div>
+                        <div class="swiper-slide"><img class="slider-img-drag"
+                                src="./img/transmission-cutaway-_18_2048x2048.jpeg" style="width:100%"></div>
+                        <div class="swiper-slide"><img class="slider-img-drag"
+                                src="./img/transmission-cutaway-_19_2048x2048.jpeg" style="width:100%"></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
@@ -623,19 +659,96 @@
 
             <div class="footer-right">
 
-                <div class="map"></div>
+                <div class="map">
+
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><iframe width="491" height="500" id="gmap_canvas"
+                                src="https://maps.google.com/maps?q=4475%20US%20HWY%2092%20Plant%20City,%20FL%2033563,%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                                href="https://fmovies-online.net">fmovies</a><br>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: right;
+                                    height: 100%;
+                                    width: 100%;
+                                }
+                            </style><a href="https://www.embedgooglemap.net">google map for websites</a>
+                            <style>
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none !important;
+                                    height: 100%;
+                                    width: 100%;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="modal" class='modal-overlay'>
+        <div class='modal-container'>
+            <div class="header-modal-container">
+                <h1>RULES</h1>
+                <button class='close-modal-btn' onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="image-modal-container">
+                <img src='' alt='closeBtn'></img>
             </div>
 
         </div>
     </div>
 
-    <script src="./js/index.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // const swiper = new Swiper('.swiper-container', {
+        //     // Optional parameters
+        //     direction: 'vertical',
+        //     loop: true,
+
+        //     // If we need pagination
+        //     pagination: {
+        //         el: '.swiper-pagination',
+        //     },
+
+        //     // Navigation arrows
+        //     navigation: {
+        //         nextEl: '.swiper-button-next',
+        //         prevEl: '.swiper-button-prev',
+        //     },
+
+        //     // And if we need scrollbar
+        //     scrollbar: {
+        //         el: '.swiper-scrollbar',
+        //     },
+        // });
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                type: "progressbar",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzDqbSZc-azDRKK0dYNuw4XhStrsC2kGw&callback=initMap"
-        async defer></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzDqbSZc-azDRKK0dYNuw4XhStrsC2kGw&callback=initMap"
+        async defer></script> -->
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60eb184780001bf1"></script>
+    <script src="./js/index.js"></script>
+    <script>
+
+    </script>
 </body>
 
 
