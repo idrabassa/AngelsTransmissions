@@ -1273,6 +1273,7 @@ Footer
   opacity: 0;
   z-index: -1;
   transition: var(--transition);
+  overflow-y: scroll;
 }
 
 /*
