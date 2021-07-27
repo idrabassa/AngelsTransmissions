@@ -1171,7 +1171,7 @@ Footer
 ======
 */
 .footer {
-  height: 400px;
+  /* height: 400px; */
 }
 
 .footer .container {
@@ -1624,9 +1624,9 @@ Effect of buttons
   .banner-key-schedule-button a {
     margin-top: 35px;
   }
-  .footer {
+  /* .footer {
     height: 580px;
-  }
+  } */
   .footer .container {
     flex-direction: column-reverse;
     justify-content: flex-end;
