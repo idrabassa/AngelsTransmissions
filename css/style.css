@@ -755,6 +755,10 @@ Banner Contact Us
   align-items: center;
   justify-content: center;
 }
+
+.banner-contact-us a {
+  color: var(--color-black);
+}
 .banner-contact-us .container {
   display: flex;
   justify-content: space-between;
@@ -1225,6 +1229,10 @@ Footer
   display: flex;
   margin-top: 20px;
   align-items: center;
+}
+.footer-information-phone a {
+  color: var(--color-black);
+  font-family: var(--font-josefin);
 }
 .footer-information-phone i {
   margin-right: 10px;
