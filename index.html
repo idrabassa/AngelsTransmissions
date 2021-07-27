@@ -26,7 +26,8 @@
                 <a href="#">
                     <i class="fas fa-map-marker-alt info-bar-address-icon "></i>
                 </a>
-                <a href="#">
+                <a
+                    href="https://www.google.com/maps/place/4475+US-92,+Plant+City,+FL+33563/@28.0202137,-82.1719017,16z/data=!4m13!1m7!3m6!1s0x88dd34f871ba7cd3:0xdad6b175d042a96c!2s4475+US-92,+Plant+City,+FL+33563!3b1!8m2!3d28.0198754!4d-82.1719262!3m4!1s0x88dd34f871ba7cd3:0xdad6b175d042a96c!8m2!3d28.0198754!4d-82.1719262">
                     <h5>ADDRESS: 4475 US HWY 92 Plant City, FL 33563, USA</h5>
                 </a>
             </div>
@@ -43,17 +44,18 @@
         </div>
         <div class="wrap-window overlay">
             <div>
-                <img src="./img/angel Log.001.png">
-                <a href="#" class='closeW'>
+                <img class="wrap-logo" src="./img/angel Log.001.png">
+                <a href="#" class='closeW' onclick="closeMenu()">
                     <img src="./img/icon-close.svg">
                 </a>
             </div>
             <ul class="navbar-menu">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Support</a></li>
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#aboutus" onclick="closeMenu()">About us</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+                <li><a href="#contactus" onclick="closeMenu()">Contact</a></li>
+                <li><a href="#peoplesay" onclick="closeMenu()">Testimonials</a></li>
             </ul>
         </div>
         <div class="header">
@@ -63,7 +65,8 @@
                         <img src="./img/angel Log.001.png" alt="Loopstudios logo">
                     </a>
                 </div>
-                <div class="navbar-wrap-icon"><a class="hamburguer" href="#">
+                <div class="navbar-wrap-icon">
+                    <a class="hamburguer" href="#" onclick="openMenu()">
                         <img src="./img/icon-hamburger.svg" alt=""></a>
                 </div>
                 <ul class="navbar-menu">
@@ -77,7 +80,13 @@
             </nav>
             <div id='home' class="navnbar-info container">
                 <h2>Full service of :</h2>
-                <h1 class="heading-primary-white">Transmissions Repair <span>and</span> Maintenance</h1>
+                <div class="landing-page">
+                    <h1 class="heading-primary-white">Transmissions Repair <span>and</span> Maintenance</h1>
+                    <div class="landing-page-img">
+                        <img src="./img/22.png" alt="Transmission">
+                    </div>
+                </div>
+
                 <div class="next-button-container">
                     <div class="scroll-down"></div>
                     <p>Swipe up</p>
@@ -91,14 +100,15 @@
                 <img src="./img/3.1.png" alt="We are your key" srcset="">
 
                 <div class="banner-key-schedule-information">
-                    <h2>After hours <span>Drop-Off</span></h2>
+                    <h2>We are <span>Certified</span></h2>
                     <p>ASE certification, also known as Automotive Service Excellence, is the certification granted to
                         an automotive technician who has completed the required training and obtained their Automotive
                         Service Excellence Certified Master Technicians requirements.
                     </p>
                 </div>
                 <div class="banner-key-schedule-button">
-                    <button id="allservices" class="primary-button" onclick="openModal()">SCHEDULE APPOINTMENT</button>
+                    <a href="sms:+18632671714&body=Hi%2520there%252C%2520I%2527d%2520like%2520to%2520make%2520a%2520appointment%2520for..."
+                        id="Appointment" class="primary-button">SCHEDULE APPOINTMENT</a>
                 </div>
 
             </div>
@@ -142,8 +152,8 @@
                             </div>
                         </div>
                         <div class="card-information">
-                            <h2>Expertise Help</h2>
-                            <p>Experience certified experts are at you service to repair the vehicle</p>
+                            <h2>Friendly personal</h2>
+                            <p>Our helpful and qualified staff will gladly assist you with any issue</p>
                         </div>
                     </div>
                     <div class="card">
@@ -153,8 +163,8 @@
                             </div>
                         </div>
                         <div class="card-information">
-                            <h2>Expertise Help</h2>
-                            <p>Experience certified experts are at you service to repair the vehicle</p>
+                            <h2>Durable Car Parts</h2>
+                            <p>We work only with proven vendors and use high class accessories</p>
                         </div>
                     </div>
                     <div class="card">
@@ -164,8 +174,8 @@
                             </div>
                         </div>
                         <div class="card-information">
-                            <h2>Expertise Help</h2>
-                            <p>Experience certified experts are at you service to repair the vehicle</p>
+                            <h2>Fast Help</h2>
+                            <p>You’ll be surprised with how fast our experts are!</p>
                         </div>
                     </div>
                 </div>
@@ -177,45 +187,26 @@
             <div class="our-services-information">
                 <div class="our-services-title">
                     <h2>Our <span class="heading1">services</span> </h2>
-                    <p>WE know how to make your vehicle work perfectly!<br>
+                    <p>We know how to make your vehicle work perfectly!<br>
                         The experts are certified and highly skilled</p>
                 </div>
                 <div class="services-grid">
                     <div class="service">
                         <i class="fas fa-check"></i>
-                        <p>FREE Loaner Cars</p>
+                        <p>Automatic Transmission Rebuild</p>
                     </div>
                     <div class="service">
                         <i class="fas fa-check"></i>
-                        <p>FREE Loaner Cars</p>
+                        <p>Automatic Transmission Service</p>
                     </div>
                     <div class="service">
                         <i class="fas fa-check"></i>
-                        <p>FREE Loaner Cars</p>
+                        <p>Engine Oil Change</p>
                     </div>
-                    <div class="service">
-                        <i class="fas fa-check"></i>
-                        <p>FREE Loaner Cars</p>
-                    </div>
-                    <div class="service">
-                        <i class="fas fa-check"></i>
-                        <p>FREE Loaner Cars</p>
-                    </div>
-                    <div class="service">
-                        <i class="fas fa-check"></i>
-                        <p>FREE Loaner Cars</p>
-                    </div>
-                    <div class="service">
-                        <i class="fas fa-check"></i>
-                        <p>FREE Loaner Cars</p>
-                    </div>
-                    <div class="service">
-                        <i class="fas fa-check"></i>
-                        <p>FREE Loaner Cars</p>
-                    </div>
+
                 </div>
                 <div class="container-button-services">
-                    <button id='allservices' class="primary-button" onclick=""> SEE ALL SERVICES</button>
+                    <button id='allservices' class="primary-button" onclick="openModal()"> SEE ALL SERVICES</button>
                 </div>
             </div>
             <div class="our-services-slider">
@@ -340,22 +331,28 @@
     </div>
     <div class="banner-car-manufacters">
         <div class="container">
-            <div class="car-manufacters-title">
-                <h2><span class="heading1">Car Manufactures</span> We Work With</h2>
-                <p>We work and collabrorate with top proven <br>manufactures and supplies</p>
+            <div class="banner-car-manufacters-upper">
+                <div class="car-manufacters-title">
+                    <h2><span class="heading1">Car Manufactures</span> We Work With</h2>
+                    <p>We work and collabrorate with top proven <br>manufactures and supplies</p>
+                </div>
             </div>
-            <div class="car-manufacters-images">
-                <img class="audi" src="./img/10.png">
+            <div class="banner-car-manufacters-downer">
+
+                <div class="car-manufacters-images">
+                    <img class="audi" src="./img/10.png">
+                </div>
+                <div class="car-manufacters-images">
+                    <img class="bmw" src="./img/11.png">
+                </div>
+                <div class="car-manufacters-images">
+                    <img class="mercedez" src="./img/12.png">
+                </div>
+                <div class="car-manufacters-images">
+                    <img class="lexus" src="./img/13.png">
+                </div>
             </div>
-            <div class="car-manufacters-images">
-                <img class="bmw" src="./img/11.png">
-            </div>
-            <div class="car-manufacters-images">
-                <img class="mercedez" src="./img/12.png">
-            </div>
-            <div class="car-manufacters-images">
-                <img class="lexus" src="./img/13.png">
-            </div>
+
         </div>
     </div>
     <div id="faq" class="FAQ blue-gray-bg">
@@ -368,73 +365,102 @@
                     <div class="question">
                         <a class="qnum1" href="#">
                             <img src="./img/14.png" alt="question">
-                            <p>How Often Should I Get My Oil Changed ?</p>
+                            <p>When should I check the transmission fluid?</p>
                         </a>
                     </div>
                     <div class="card-body card-body1">
-                        It is recommended that you get your oil changed every three months or every 5000 kilometres,
-                        whichever comes first.
+                        You should check the transmission fluid regularly. Try to check it at least once a month or at
+                        the sign of any trouble, for instance if there is any hesitation when you shift gears in an
+                        automatic.
                     </div>
                 </div>
                 <div class="FAQ-questions-card">
                     <div class="question">
                         <a class="qnum2" href="#">
                             <img src="./img/14.png" alt="question">
-                            <p>How Often Should I Get My Oil Changed ?</p>
+                            <p>How do I check the transmission fluid?</p>
                         </a>
                     </div>
-                    <div class="card-body card-body2">It is recommended that you get your oil changed every three months
-                        or every
-                        5000 kilometres,
-                        whichever comes first.</div>
+                    <div class="card-body card-body2">It’s not hard to check your transmission fluid if the vehicle is
+                        an automatic. What you want is clear, pink transmission fluid. If it is low, top it up. If it is
+                        dark, smells burnt or has bits in it then you need to get it changed by at a reliable auto
+                        repair shop.</div>
                 </div>
                 <div class="FAQ-questions-card">
                     <div class="question">
                         <a class="qnum3" href="#">
                             <img src="./img/14.png" alt="question">
-                            <p>How Often Should I Get My Oil Changed ?</p>
+                            <p>Is it really that important to check the transmission fluid ?</p>
                         </a>
                     </div>
-                    <div class="card-body card-body3">It is recommended that you get your oil changed every three months
-                        or every
-                        5000 kilometres,
-                        whichever comes first.</div>
+                    <div class="card-body card-body3">Yes, it can be. Often times the symptoms you’ll experience from
+                        low or dirty transmission fluid will be the same as transmission problems. If you check the
+                        fluid levels regularly and refill as necessary then you’ll know if there are any symptoms of
+                        trouble that it’s not because the fluid levels are low and you need to see a mechanic.</div>
                 </div>
                 <div class="FAQ-questions-card">
                     <div class="question">
                         <a class="qnum4" href="#">
                             <img src="./img/14.png" alt="question">
-                            <p>How Often Should I Get My Oil Changed ?</p>
+                            <p>Are there different types of transmission fluid??</p>
                         </a>
                     </div>
-                    <div class="card-body card-body4">It is recommended that you get your oil changed every three months
-                        or every
-                        5000 kilometres,
-                        whichever comes first.</div>
+                    <div class="card-body card-body4">How do I know what to buy? Yes, there are many different types of
+                        transmission fluid, each designed for a certain transmission. Different vehicles require
+                        different transmission fluids and the age of the car can also be a factor because newer
+                        transmissions take different types of transmission fluids than older vehicles. Don’t guess! Find
+                        out which type of transmission fluid is required for your vehicle by checking your owner’s
+                        manual.</div>
                 </div>
                 <div class="FAQ-questions-card">
                     <div class="question">
                         <a class="qnum5" href="#">
                             <img src="./img/14.png" alt="question">
-                            <p>How Often Should I Get My Oil Changed ?</p>
+                            <p>What is a transmission flush and should I get one?</p>
                         </a>
                     </div>
-                    <div class="card-body card-body5">It is recommended that you get your oil changed every three months
-                        or every
-                        5000 kilometres,
-                        whichever comes first.</div>
+                    <div class="card-body card-body5">A transmission flush is used by some auto repair shops with the
+                        goal of flushing out debris. Auto Tech does not do any sort of transmission flush. Flushing an
+                        older transmission can cause harmful sediment to get stuck in the solenoids of the transmission.
+                        We heavily favor regular maintenance to lengthen the life of your transmission. We service the
+                        transmission by changing fluid and the filter and do not recommend having your transmission
+                        flushed. </div>
                 </div>
                 <div class="FAQ-questions-card">
                     <div class="question">
                         <a class="qnum6 " href="#">
                             <img src="./img/14.png" alt="question">
-                            <p>How Often Should I Get My Oil Changed ?</p>
+                            <p>How do I know I have a fluid leak from the transmission?</p>
                         </a>
                     </div>
-                    <div class="card-body card-body6">It is recommended that you get your oil changed every three months
-                        or every
-                        5000 kilometres,
-                        whichever comes first.</div>
+                    <div class="card-body card-body6">Transmission fluid is slightly pink in color – it will appear pink
+                        or red, or possibly more brownish if the transmission fluid is dirty and needs to be replaced.
+                        When you feel transmission fluid it will be slick and oily on your fingers. It smells much like
+                        oil unless it is dirty, in which case it will smell burnt. Usually transmission fluid leaks
+                        around the front or middle of your vehicle, so if you find puddles of reddish liquid there it is
+                        probably transmission fluid. Another clue is if in addition to the leak your transmission is not
+                        working well and you notice changes in the way it sounds when you shift gears, or if shifting
+                        gears is not working as well. In this case you likely have a leak of transmission fluid that is
+                        impacting how your transmission operates.</div>
+                </div>
+                <div class="FAQ-questions-card">
+                    <div class="question">
+                        <a class="qnum7 " href="#">
+                            <img src="./img/14.png" alt="question">
+                            <p>What are signs of transmission problems?</p>
+                        </a>
+                    </div>
+                    <div class="card-body card-body7">There are many different things that can go wrong in a
+                        transmission. Here are some common signs of problems you can watch for:
+                        <br>
+                        -The transmission feels as if it is slipping between gears when you drive
+                        -The transmission pops back into neutral when you are driving
+                        -If you hear strange grinding or clunking noises, especially when you are in neutral or shifting
+                        gears
+                        -If the transmission fluid is leaking or smells burned
+                        -If shifting gears is not smooth, but rather grinding or otherwise difficult
+                        -If there is a delay when you shift gears or if the RPMs are higher than they should be when you
+                        change gears</div>
                 </div>
             </div>
         </div>
@@ -554,8 +580,8 @@
                                 </div>
                             </div>
                             <div class="people-name">
-                                <p>Adam Smith <br>
-                                    Thursday, April 26, 2018</p>
+                                <p>Bethany Bishop<br>
+                                    Thursday, May 26, 2021</p>
                             </div>
                         </div>
                     </div>
@@ -564,12 +590,11 @@
                             <div class="double-quote">
                                 <img src="./img/19.png" alt="">
                             </div>
-                            <p><span class="heading1">Great service!</span></p>
+                            <p><span class="heading1">Trustworthy. Amazing!</span></p>
                         </div>
                         <div class="comment-1-content">
-                            <p>I was trotted very professionally and kindly. I was concerned about costs, looked it up,
-                                and they had an absolutely fair price for the work needed. Technicians are very helpful
-                                and experience. My car is now great and no problems at all.</p>
+                            <p>This place is amazing. I cannot recommend it enough. Their communication is concise and
+                                clear. Their pricing is upfront and reasonable.</p>
                         </div>
                         <div class="comment-1-content-person">
                             <div class="people">
@@ -578,8 +603,8 @@
                                 </div>
                             </div>
                             <div class="people-name">
-                                <p>Adam Smith <br>
-                                    Thursday, April 26, 2018</p>
+                                <p>Donald Wagner<br>
+                                    Monday, April 12, 2020</p>
                             </div>
                         </div>
                     </div>
@@ -588,12 +613,12 @@
                             <div class="double-quote">
                                 <img src="./img/19.png" alt="">
                             </div>
-                            <p><span class="heading1">Great service!</span></p>
+                            <p><span class="heading1">Great experiencie!</span></p>
                         </div>
                         <div class="comment-1-content">
-                            <p>I was trotted very professionally and kindly. I was concerned about costs, looked it up,
-                                and they had an absolutely fair price for the work needed. Technicians are very helpful
-                                and experience. My car is now great and no problems at all.</p>
+                            <p>I have to say Angel went above and beyond to fix an issue I had. Tom reached out to me
+                                last night and reassured me that he will take car of any issues that arise again
+                                personally! Thank you again for making the corrections and making me feel at home.</p>
                         </div>
                         <div class="comment-1-content-person">
                             <div class="people">
@@ -602,8 +627,8 @@
                                 </div>
                             </div>
                             <div class="people-name">
-                                <p>Adam Smith <br>
-                                    Thursday, April 26, 2018</p>
+                                <p>Rico Adona<br>
+                                    Saturday, December 8, 2019</p>
                             </div>
                         </div>
                     </div>
@@ -662,10 +687,16 @@
                 <div class="map">
 
                     <div class="mapouter">
-                        <div class="gmap_canvas"><iframe width="491" height="500" id="gmap_canvas"
+                        <div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas"
                                 src="https://maps.google.com/maps?q=4475%20US%20HWY%2092%20Plant%20City,%20FL%2033563,%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                href="https://fmovies-online.net">fmovies</a><br>
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <!-- <a href="https://fmovies-online.net">fmovies</a><br> -->
+                            <style>
+                                iframe {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            </style>
                             <style>
                                 .mapouter {
                                     position: relative;
@@ -692,13 +723,14 @@
     <div id="modal" class='modal-overlay'>
         <div class='modal-container'>
             <div class="header-modal-container">
-                <h1>RULES</h1>
+                <h1>Services</h1>
                 <button class='close-modal-btn' onclick="closeModal()">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="image-modal-container">
-                <img src='' alt='closeBtn'></img>
+
+
             </div>
 
         </div>

@@ -26,6 +26,9 @@
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --very-dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.281);
+  --very-dark-shadow2: 0 5px 15px rgba(0, 0, 0, 0.596);
+  /* transition */
+  --transition: all 0.3s linear;
 }
 * {
   padding: 0;
@@ -153,11 +156,12 @@ li:hover:before {
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
+    /* max-width: 860px; */
   }
 }
 @media (min-width: 992px) {
   .container {
-    max-width: 960px;
+    max-width: 980px;
   }
 }
 @media (min-width: 1440px) {
@@ -178,16 +182,16 @@ li:hover:before {
   right: 0;
   bottom: 0;
   background-color: var(--color-black); /* Black background with opacity */
-  z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
   overflow-y: hidden;
   transition: all ease-in-out 0.3s;
 }
-.closeW {
+.closeW img {
   transform: rotate(0deg);
   transition: all ease-in-out 0.3s;
 }
-.closeW:hover {
+.closeW img:hover {
   transform: rotate(135deg);
 }
 .closeW img {
@@ -243,9 +247,9 @@ li:hover:before {
 }
 /* NavBar */
 .header {
-  height: 650px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(../img/2.jpg) no-repeat center center/cover;
+  height: 800px;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(../img/2.4.jpg) no-repeat center center/cover;
   display: flex;
   flex-direction: column;
 }
@@ -256,10 +260,18 @@ li:hover:before {
   padding-top: 40px;
   align-items: center;
 }
+.navbar .logo {
+  transform: scale(1);
+  transition: var(--transition);
+}
+.navbar .logo:hover {
+  transform: scale(1.2);
+}
 .navbar .logo img {
   height: 50px;
   width: 280px;
 }
+
 .navbar .navbar-wrap-icon {
   display: none;
 }
@@ -275,18 +287,43 @@ li:hover:before {
   margin: 15px;
 }
 
+.navnbar-info .landing-page {
+  display: flex;
+  justify-content: space-between;
+}
+.navnbar-info .landing-page .landing-page-img img {
+  position: relative;
+  top: -60px;
+  width: 400px;
+  height: 400px;
+  filter: drop-shadow(22px -12px 7px rgba(0, 0, 0, 0.5));
+  transform: translateY(20px) rotate(10deg) scale(1);
+  transition: var(--transition);
+}
+.navnbar-info .landing-page .landing-page-img img:hover {
+  transform: scale(1.2);
+}
+/* @keyframes transmission1 {
+  from {
+    transform: translateY(20px) rotate(10deg);
+  }
+  to {
+    transform: translateY(0) rotate(20deg);
+  }
+} */
 .navnbar-info h2 {
   font-size: 40px;
   color: white;
   font-family: var(--font-atalanta);
   text-transform: uppercase;
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 .navnbar-info h1 {
   font-size: 60px;
   border: 2px solid white;
   width: 650px;
+  height: 280px;
   margin-top: 20px;
   padding: 30px;
   text-transform: uppercase;
@@ -396,8 +433,10 @@ li:hover:before {
   margin-top: 10px;
 }
 
-.banner-key-schedule-button button {
+.banner-key-schedule-button a {
   margin-top: 45px;
+  text-align: center;
+  padding: 5px;
 }
 
 /* 
@@ -407,7 +446,7 @@ li:hover:before {
 */
 
 .services {
-  height: 400px;
+  /* height: 400px; */
   /* background: var(--color-white-gray); */
   background: var(--clr-grey-10);
 }
@@ -420,6 +459,7 @@ li:hover:before {
   display: flex;
   flex-direction: column;
   width: 50%;
+  overflow: hidden;
 }
 .services-images-1 {
   position: relative;
@@ -434,6 +474,11 @@ li:hover:before {
   position: relative;
   height: 200px;
   width: 300px;
+  transform: scale(1);
+  transition: var(--transition);
+}
+.services-images-1 img:hover {
+  transform: scale(1.2);
 }
 .services-images-1::before {
   content: '';
@@ -484,6 +529,11 @@ li:hover:before {
   padding: 10px;
   align-items: center;
   justify-content: center;
+  box-shadow: none;
+  transition: var(--transition);
+}
+.card:hover {
+  box-shadow: var(--very-dark-shadow);
 }
 .card-information {
   margin-left: 10px;
@@ -527,7 +577,6 @@ li:hover:before {
 ===============
 */
 .our-services {
-  padding: 20px;
 }
 .our-services .container {
   display: flex;
@@ -537,15 +586,17 @@ li:hover:before {
   display: flex;
   flex-direction: column;
   width: 50%;
+  margin: 50px 0;
+  justify-content: space-between;
 }
-.our-services-title {
+/* .our-services-title {
   margin-top: 80px;
-  /* text-align: center; */
-}
+ 
+} */
 .services-grid {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   margin-top: 30px;
 }
 .service {
@@ -567,6 +618,7 @@ li:hover:before {
 .our-services-slider {
   width: 50%;
   position: relative;
+  margin: 50px 0;
 }
 
 /* 
@@ -732,13 +784,10 @@ CarManufactures
 ===============
  */
 .banner-car-manufacters {
-  height: 150px;
 }
 .banner-car-manufacters .container {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  margin-top: 80px;
 }
 .car-manufacters-title p {
   margin-top: 20px;
@@ -763,6 +812,17 @@ CarManufactures
 .car-manufacters-images img.lexus {
   width: 120px;
   height: 100px;
+}
+.banner-car-manufacters-upper {
+  margin: 50px 0;
+  width: 50%;
+  display: flex;
+}
+.banner-car-manufacters-downer {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 50px 0;
 }
 
 /* 
@@ -813,13 +873,12 @@ CarManufactures
 .FAQ-questions-card .card-body {
   margin-left: 40px;
   height: 0px;
-  display: none;
-  overflow-y: 0px;
-  transition: all ease-in-out 0.5s;
+  /* display: none; */
+  overflow-y: hidden;
+  transition: var(--transition);
 }
 .FAQ-questions-card .card-body.opened {
   height: 100%;
-  display: block;
 }
 
 /* 
@@ -907,7 +966,7 @@ CarManufactures
   flex-direction: row;
 }
 .contact-us-form {
-  width: 50%;
+  width: 45%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -921,8 +980,9 @@ CarManufactures
 }
 
 .contact-us-form form {
-  height: 300px;
-  width: 300px;
+  /* height: 300px; */
+  /* width: 300px; */
+  /* padding: 20px; */
   display: flex;
   flex-direction: column;
   /* justify-content: space-between; */
@@ -946,7 +1006,12 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   margin: 0 20px;
+  width: 10%;
 }
+.divider h1 {
+  text-align: center;
+}
+
 .divider .upper {
   height: 100%;
   width: 1px;
@@ -962,7 +1027,7 @@ textarea:focus {
 .contact-us-socials-medias {
   padding: 10px;
   /* background: white; */
-  width: 50%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -976,6 +1041,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 
 .contact-us-socials-medias-body .social-medias a {
@@ -1038,10 +1104,15 @@ h3 {
 .people-say-banner .people-say-comment {
   width: 250px;
   /* height: 250px; */
-  box-shadow: var(--dark-shadow);
+  box-shadow: var(--light-shadow);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 20px;
+  transition: var(--transition);
+}
+.people-say-banner .people-say-comment:hover {
+  box-shadow: var(--very-dark-shadow2);
 }
 .double-quote img {
   height: 40px;
@@ -1235,11 +1306,18 @@ Modal Rules
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
-
-.image-modal-container img {
-  width: 70%;
-  height: 70%;
+.image-modal-container ul li {
+  list-style: circle;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.image-modal-container ul li ul p:nth-child(1) {
+  margin-bottom: 10px;
+}
+.image-modal-container ul li ul {
+  margin-left: 10px;
 }
 
 .close-modal-btn {
@@ -1313,4 +1391,358 @@ Effect of buttons
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* 
+===================
+ Responsive Desing
+===================
+*/
+
+@media (max-width: 992px) {
+  /* .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+  } */
+  .navbar-menu {
+    display: none;
+  }
+  .navbar .navbar-wrap-icon {
+    display: block;
+  }
+  .info-bar-hours {
+    display: none;
+  }
+  .navnbar-info h1 {
+    height: 230px;
+    font-size: 50px;
+  }
+  .navnbar-info .landing-page .landing-page-img img {
+    width: 300px;
+    height: 300px;
+  }
+  .header {
+    height: 700px;
+  }
+  .banner-key-schedule-information h2 {
+    margin-top: 20px;
+  }
+  .services-images-container {
+    display: none;
+  }
+
+  .services-information {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .banner-car-manufacters .container {
+    flex-direction: column;
+  }
+  .banner-car-manufacters-upper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .banner-car-manufacters-downer {
+    width: 100%;
+  }
+  .car-manufacters-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .FAQ-questions {
+    margin-left: 50px;
+  }
+  .people-say-banner .people-say-comment {
+    box-shadow: none;
+  }
+  /* .contact-us-title h2 {
+    margin-left: 0px;
+  } */
+}
+
+@media (max-width: 912px) {
+  .navnbar-info .landing-page .landing-page-img img {
+    width: 250px;
+    height: 250px;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    height: 800px;
+  }
+  .navnbar-info .landing-page {
+    flex-direction: column;
+  }
+  .navnbar-info h1 {
+    width: 100%;
+  }
+  .landing-page-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navnbar-info .landing-page .landing-page-img img {
+    position: relative;
+    top: 65px;
+    left: 140px;
+  }
+  .landing-page-img {
+    height: 0;
+  }
+  .navnbar-info .next-button-container {
+    margin-top: 150px;
+  }
+  .banner-key-schedule-information p {
+    display: none;
+  }
+  .banner-key-schedule-information h2 {
+    margin-top: 42px;
+  }
+  .contact-us-body {
+    flex-direction: column;
+  }
+  .contact-us-form {
+    width: 100%;
+  }
+  .divider {
+    width: 100%;
+    flex-direction: row;
+    margin: 20px 0;
+  }
+  .contact-us-socials-medias {
+    width: 100%;
+  }
+  .divider .upper {
+    width: 100%;
+    height: 1px;
+  }
+  .divider .downer {
+    width: 100%;
+    height: 1px;
+  }
+  .people-say-banner {
+    flex-direction: column;
+  }
+  .people-say-banner .people-say-comment {
+    width: 100%;
+  }
+  .banner-contact-us h1 {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .our-services .container {
+    flex-direction: column;
+  }
+  .our-services-information {
+    width: 100%;
+    text-align: center;
+  }
+  .our-services-slider {
+    width: 100%;
+  }
+  .service {
+    margin-left: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-bar {
+    flex-direction: column;
+  }
+  .info-bar-contact {
+    margin-top: 10px;
+  }
+  .closeW {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap-window.overlay div .wrap-logo {
+    height: 50px;
+    width: 280px;
+  }
+  .wrap-window.overlay .navbar-menu li a {
+    font-size: 30px;
+  }
+  .banner-key-schedule {
+    height: 130px;
+  }
+  .container-banner-key-schedule .container {
+    height: 120px;
+  }
+  .container-banner-key-schedule img {
+    height: 150px;
+    width: 150px;
+    left: -10px;
+  }
+  .banner-key-schedule-button a {
+    margin-top: 35px;
+  }
+  .footer {
+    height: 580px;
+  }
+  .footer .container {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  .footer .container .footer-left {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .footer .container .footer-right {
+    width: 100%;
+    height: 300px;
+  }
+}
+@media (max-width: 575px) {
+  .FAQ-questions {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .navnbar-info .landing-page .landing-page-img img {
+    height: 200px;
+    width: 200px;
+    top: 55px;
+  }
+  .banner-key-schedule-information h2 {
+    margin-left: 30px;
+    font-size: 15px;
+  }
+  .navnbar-info .landing-page .landing-page-img img {
+    height: 180px;
+    width: 180px;
+    top: 40px;
+    left: 120px;
+  }
+  .banner-contact-us p {
+    display: none;
+  }
+  .banner-contact-us {
+    padding: 20px;
+  }
+  .footer .container .footer-left {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navnbar-info h1 {
+    font-size: 45px;
+  }
+  .navnbar-info h2 {
+    font-size: 30px;
+    margin-top: 40px;
+  }
+  .banner-key-schedule-button a {
+    width: 100px;
+    letter-spacing: 1px;
+    font-size: 10px;
+  }
+  .car-manufacters-images img {
+    width: 80px;
+    height: 60px;
+  }
+  .car-manufacters-images img.bmw {
+    width: 60px;
+    height: 60px;
+  }
+  .car-manufacters-images img.mercedez {
+    width: 120px;
+    height: 70px;
+  }
+  .car-manufacters-images img.lexus {
+    width: 100px;
+    height: 80px;
+  }
+  .navnbar-info .landing-page .landing-page-img img {
+    left: 100px;
+  }
+  .container-banner-key-schedule .container {
+    height: 80px;
+  }
+  .banner-key-schedule {
+    height: 90px;
+  }
+  .container-banner-key-schedule img {
+    height: 100px;
+    width: 100px;
+    left: 5px;
+    top: -30px;
+  }
+  .banner-key-schedule-information h2 {
+    margin-top: 20px;
+  }
+  .banner-key-schedule-button a {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 442px) {
+  .header {
+    height: 700px;
+  }
+  .navnbar-info h1 {
+    font-size: 40px;
+    height: 200px;
+  }
+  .navnbar-info .next-button-container {
+    margin-top: 130px;
+  }
+  .navbar .logo img {
+    height: 40px;
+    width: 200px;
+  }
+  .FAQ-questions {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navnbar-info h1 {
+    font-size: 35px;
+    height: 180px;
+  }
+  .navnbar-info .landing-page .landing-page-img img {
+    height: 150px;
+    width: 150px;
+  }
+  .services-icons-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .services-grid {
+    margin-right: 40px;
+  }
+  .banner-contact-us h1 {
+    font-size: 10px;
+  }
+  .service {
+    margin-left: 20%;
+  }
+
+  .car-manufacters-images img {
+    width: 60px;
+    height: 40px;
+  }
+  .car-manufacters-images img.bmw {
+    width: 40px;
+    height: 40px;
+  }
+  .car-manufacters-images img.mercedez {
+    width: 80px;
+    height: 50px;
+  }
+  .car-manufacters-images img.lexus {
+    width: 80px;
+    height: 60px;
+  }
+  .banner-car-manufacters-downer {
+    margin: 20px 0;
+  }
 }
