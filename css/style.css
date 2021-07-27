@@ -863,6 +863,7 @@ CarManufactures
 }
 .FAQ-questions-card .question a p {
   color: var(--color-black);
+  text-align: start;
 }
 
 .FAQ-questions-card .question img {
@@ -1535,6 +1536,32 @@ Effect of buttons
   .banner-contact-us h1 {
     font-size: 12px;
   }
+  .modal-container {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .modal-container div {
+    width: 80%;
+    padding: 20px;
+  }
+
+  /* .header-modal-container {
+    height: 30%;
+    align-items: center;
+    justify-content: center;
+  } */
+
+  .image-modal-container {
+    height: 80%;
+    align-items: start;
+  }
+
+  /* .close-modal-btn {
+    position: absolute;
+    top: 80%;
+    left: 48%;
+  } */
 }
 
 @media (max-width: 768px) {
