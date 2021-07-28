@@ -245,6 +245,10 @@ li:hover:before {
 .info-bar-contact span {
   font-family: var(--font-atalanta);
 }
+
+.info-bar-contact h5 {
+  margin-left: 10px;
+}
 /* NavBar */
 .header {
   height: 800px;
