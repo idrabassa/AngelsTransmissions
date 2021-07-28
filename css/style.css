@@ -770,7 +770,7 @@ Banner Contact Us
   display: flex;
   justify-content: space-between;
   text-align: center;
-  padding: 10px 0px;
+  /* padding: 10px 0px; */
   /* padding: 20px; */
 }
 .banner-contact-us h1 {
@@ -1094,7 +1094,7 @@ h3 {
 ============
 */
 .people-say {
-  padding: 20px;
+  padding: 15px;
 }
 .people-say .container {
   display: flex;
@@ -1673,11 +1673,11 @@ Effect of buttons
   .banner-contact-us p {
     display: none;
   }
-  .banner-contact-us {
-    padding: 20px;
-  }
+  /* .banner-contact-us {
+    padding: 15px;
+  } */
   .footer .container .footer-left {
-    padding: 20px;
+    padding: 15px;
   }
 }
 
