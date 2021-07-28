@@ -1252,6 +1252,10 @@ Footer
 .footer-information-address i {
   margin-right: 10px;
 }
+.footer-information-address a {
+  color: var(--color-black);
+  font-family: var(--font-josefin);
+}
 .footer .container .footer-right {
   width: 50%;
 }
@@ -1742,6 +1746,9 @@ Effect of buttons
   }
   .FAQ-questions {
     margin-left: 30px;
+  }
+  .footer-left h4 {
+    font-size: 12px;
   }
 }
 
