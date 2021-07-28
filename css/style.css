@@ -1786,4 +1786,7 @@ Effect of buttons
   .banner-car-manufacters-downer {
     margin: 20px 0;
   }
+  .info-bar h5 {
+    font-size: 12px;
+  }
 }
