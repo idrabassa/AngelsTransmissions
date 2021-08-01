@@ -10,6 +10,7 @@ import connectDB from './config/db.js'
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 import userRoutes from './routes/userRoutes.js'
 import seeusRoutes from './routes/seeusRoutes.js'
+import servicesRoutes from './routes/servicesRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
 import cors from 'cors'
 
@@ -37,6 +38,8 @@ app.use(express.json())
 app.use('/api/users', userRoutes)
 
 app.use('/api/seeus', seeusRoutes)
+
+app.use('/api/services', servicesRoutes)
 
 app.use('/api/upload', uploadRoutes)
 

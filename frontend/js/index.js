@@ -127,3 +127,7 @@ function closeMenu() {
   const offsetwindow = document.querySelector('.wrap-window')
   offsetwindow.style.width = '0%'
 }
+
+// const sliderServices = document.querySelector('#mySwiper1')
+
+// console.log(sliderServices)
