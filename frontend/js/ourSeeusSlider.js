@@ -1,7 +1,45 @@
+import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
 let images = []
 
+const pag = document.querySelector('.swiper-pagination-2')
+if (pag !== null) {
+  pag.classList.add('.swiper-pagination')
+}
+
+const nextButton = document.querySelector('.swiper-button-next-2')
+if (nextButton !== null) {
+  nextButton.classList.add('swiper-button-next')
+}
+
+const prevButton = document.querySelector('.swiper-button-prev-2')
+if (prevButton !== null) {
+  prevButton.classList.add('swiper-button-prev')
+}
+
+const swiper = new Swiper(document.querySelector('.mySwiper2'), {
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+
+  navigation: {
+    nextEl: document.getElementsByClassName('swiper-button-next')[1],
+    prevEl: document.getElementsByClassName('swiper-button-prev')[1],
+  },
+  pagination: {
+    el: pag,
+    clickable: true,
+  },
+})
+
 const isLogin = () => {
-  if (localStorage.getItem('login') === null) {
+  if (
+    localStorage.getItem('login') === null &&
+    window.location.href !== 'http://localhost:5000/index.html' &&
+    window.location.href != 'http://localhost:5000/'
+  ) {
     window.location.href = '/login.html'
   }
 }
@@ -27,29 +65,20 @@ const setImagesUI = () => {
       <div class="card-body">
   
           <p class="card-text">${image.route}</p>
-          <a id="${image._id}" href="#" class="btn btn-danger" onclick="deleteButton(event)">Delete</a>
+          <button id="${image._id}"  class="btn btn-danger" onclick="deleteButton(event)">Delete</button>
       </div>
   </div>`
   })
   if (card !== null) {
     card.innerHTML = elements
   }
-
-  const sliderServices = document.querySelector('#mySwiper2')
-  // const sliderServices = document.querySelector('.our-services-slider')
-
-  // // console.log(sliderServices)
-  let elementsSlider = ''
-
-  images.forEach((image) => {
-    elementsSlider += `<div class="swiper-slide">
-      <img class="slider-img-drag" src="${image.route}"
-          style="width:100%">
-  </div>`
-  })
-
-  if (sliderServices !== null) {
-    sliderServices.innerHTML = elementsSlider
+  if (swiper !== undefined) {
+    images.forEach((image) => {
+      swiper.prependSlide(`<div class="swiper-slide">
+        <img class="slider-img-drag" src="${image.route}"
+            style="width:100%">
+    </div>`)
+    })
   }
 }
 
@@ -57,15 +86,9 @@ async function fileuploadSeeus(e) {
   const file = e.target.files[0]
   const formData = new FormData()
   formData.append('image', file)
-
-  //   setUploading(true)
   const response = await fetch('/api/upload', {
     method: 'POST',
     body: formData,
-    // headers: {
-    //   'Content-Type': 'multipart/form-data',
-    // },
-    // headers: { 'Content-Type': 'application/json' },
   })
   const resData = await response.json()
 

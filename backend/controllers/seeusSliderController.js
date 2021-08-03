@@ -1,7 +1,11 @@
 import asyncHandler from 'express-async-handler'
 import Seeus from '../models/seeusModel.js'
+import fs from 'fs/promises'
+import path from 'path'
 
 import mongoose from 'mongoose'
+
+const __dirname = path.resolve()
 
 // @desc    Get all images in see us
 // @route   GET /api/seeus
@@ -34,6 +38,14 @@ const setSeeusRoutes = asyncHandler(async (req, res) => {
 // @access  Private/Admin
 const deleteSeeusRoutes = asyncHandler(async (req, res) => {
   const image = await Seeus.findById(req.params.id)
+
+  fs.unlink(image.route)
+    .then(() => {
+      console.log('File removed')
+    })
+    .catch((err) => {
+      console.error('Something wrong happened removing the file', err)
+    })
 
   if (image) {
     await image.remove()

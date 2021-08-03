@@ -31,7 +31,6 @@ addEventButton(qnum5, anum5)
 addEventButton(qnum6, anum6)
 addEventButton(qnum7, anum7)
 
-// Smooth Scrolling
 $('#navbar a').on('click', function (event) {
   if (this.hash !== '') {
     event.preventDefault()
@@ -112,6 +111,7 @@ function openModal() {
     </ul>
   </div>`
 }
+
 function closeModal() {
   const modal = document.getElementById('modal')
   modal.classList.remove('show-modal')
@@ -127,7 +127,23 @@ function closeMenu() {
   const offsetwindow = document.querySelector('.wrap-window')
   offsetwindow.style.width = '0%'
 }
+const bottonNavbar = document.getElementsByClassName('botton-navbar')[0]
 
-// const sliderServices = document.querySelector('#mySwiper1')
+$(window).scroll(function () {
+  if (window.innerWidth < 786) {
+    if (
+      $(window).scrollTop() + $(window).height() >
+      $(document).height() - 100
+    ) {
+      bottonNavbar.style.opacity = 0
 
-// console.log(sliderServices)
+      console.log('menor 100px')
+    } else {
+      bottonNavbar.style.opacity = 1
+
+      console.log('mayor 100px')
+    }
+  } else {
+    bottonNavbar.style.opacity = 0
+  }
+})

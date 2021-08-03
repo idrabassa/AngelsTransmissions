@@ -1,13 +1,6 @@
 let email = ''
 let password = ''
 
-// const inputemail = document
-//   .querySelector('#exampleInputEmail1')
-//   .addEventListener('change', (e) => {
-//     email = e.target.value
-//   })
-// console.log(email)
-
 function setEmail(e) {
   email = e.target.value
 }

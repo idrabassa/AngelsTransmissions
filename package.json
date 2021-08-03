@@ -1,7 +1,7 @@
 {
   "name": "angeltransmissions",
   "version": "1.0.0",
-  "description": "MERN shopping Cart",
+  "description": "",
   "main": "server.js",
   "type": "module",
   "scripts": {

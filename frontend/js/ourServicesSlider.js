@@ -1,18 +1,25 @@
-// var swiper = new Swiper('.mySwiper', {
-//   pagination: {
-//     el: '.swiper-pagination',
-//     type: 'progressbar',
-//   },
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-// })
+import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
+
 let imagesService = []
-let divServicesSlider = []
+
+const swiper = new Swiper(document.querySelector('.mySwiper'), {
+  pagination: {
+    el: document.querySelector('.swiper-pagination'),
+    type: 'progressbar',
+  },
+  navigation: {
+    nextEl: document.querySelector('.swiper-button-next'),
+    prevEl: document.querySelector('.swiper-button-prev'),
+  },
+})
 
 const isLoginService = () => {
-  if (localStorage.getItem('login') === null) {
+  console.log(window.location.href)
+  if (
+    localStorage.getItem('login') === null &&
+    window.location.href !== 'http://localhost:5000/index.html' &&
+    window.location.href != 'http://localhost:5000/'
+  ) {
     window.location.href = '/login.html'
   }
 }
@@ -38,43 +45,22 @@ const setImagesUIServices = () => {
       <div class="card-body">
   
           <p class="card-text">${image.route}</p>
-          <a id="${image._id}" href="#" class="btn btn-danger" onclick="deleteButtonService(event)">Delete</a>
+          <button id="${image._id}" class="btn btn-danger" onclick="deleteButtonService(event)">Delete</button>
       </div>
   </div>`
   })
   if (card !== null) {
     card.innerHTML = elements
   }
-  const sliderServices = document.querySelector('#mySwiper1')
-  // const sliderServices = document.querySelector('.our-services-slider')
 
-  // // console.log(sliderServices)
-  let elementsSlider = ''
-
-  imagesService.forEach((image) => {
-    elementsSlider += `<div class="swiper-slide">
-      <img class="slider-img-drag" src="${image.route}"
-          style="width:100%">
-  </div>`
-  })
-
-  // elementsSlider = `<div class="swiper-container mySwiper">
-  //   <div class="swiper-wrapper" id="mySwiper1">  ${elementsSlider}
-  //   </div>
-  //   <div class="swiper-button-next"></div>
-  //   <div class="swiper-button-prev"></div>
-  //   <div class="swiper-pagination"></div>
-  // </div>`
-  if (sliderServices !== null) {
-    sliderServices.innerHTML = elementsSlider
+  if (swiper !== undefined) {
+    imagesService.forEach((image) => {
+      swiper.prependSlide(`<div class="swiper-slide">
+        <img class="slider-img-drag" src="${image.route}"
+            style="width:100%">
+    </div>`)
+    })
   }
-  // if (swiper !== null) {
-  //   swiper.innerHTML = elementsSlider
-  // }
-
-  // imagesService.forEach((image) => {
-  //   divServicesSlider.push(image.route)
-  // })
 }
 
 async function fileuploadServices(e) {
@@ -82,14 +68,9 @@ async function fileuploadServices(e) {
   const formData = new FormData()
   formData.append('image', file)
 
-  //   setUploading(true)
   const response = await fetch('/api/upload', {
     method: 'POST',
     body: formData,
-    // headers: {
-    //   'Content-Type': 'multipart/form-data',
-    // },
-    // headers: { 'Content-Type': 'application/json' },
   })
   const resData = await response.json()
 
@@ -117,5 +98,3 @@ const deleteButtonService = async (event) => {
   })
   reloadImagesService()
 }
-
-const setElementsIndexUI = () => {}
